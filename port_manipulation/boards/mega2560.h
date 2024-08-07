@@ -1,6 +1,9 @@
 // #define MEGA2560_H
-#include <Arduino.h>
-#define uint8_t unsigned char
+#include <Arduino.h>    // needs to be included -> PORT*, DDR*, PIN*
+
+#ifndef uint8_t
+  #define uint8_t unsigned char
+#endif
 
 #define A0  54
 #define A1  55
@@ -19,6 +22,8 @@
 #define A13 67
 #define A14 68
 #define A15 69
+
+#define AL A15      // define the last analogPin to one Makro
 
 volatile uint8_t *lookup_registers[][3] = {
   { &PORTA, &DDRA, &PINA },

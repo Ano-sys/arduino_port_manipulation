@@ -1,6 +1,9 @@
 // #define UNO_H
-#include <Arduino.h>
-#define uint8_t unsigned char
+#include <Arduino.h>    // needs to be included -> PORT*, DDR*, PIN*
+
+#ifndef uint8_t
+  #define uint8_t unsigned char
+#endif
 
 #define A0  14
 #define A1  15
@@ -8,6 +11,8 @@
 #define A3  17
 #define A4  18
 #define A5  19
+
+#define AL A5           // define the last analogPin to one Makro
 
 volatile uint8_t *lookup_registers[][3] = {
   { &PORTB, &DDRB, &PINB },
